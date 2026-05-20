@@ -1,124 +1,151 @@
-📌 O que é um vetor?
+# 🚀 Vetores em Java
 
-Um vetor (array) é uma estrutura usada para armazenar vários valores do mesmo tipo dentro de uma única variável.
+> Explicação simples e visual sobre vetores (`arrays`) em Java.
+
+---
+
+# 📌 O que é um vetor?
+
+Um **vetor** (array) é uma estrutura usada para armazenar **vários valores do mesmo tipo** dentro de uma única variável.
 
 Imagine uma fileira de caixas na memória:
 
+```text
 ┌────┬────┬────┬────┬────┐
 │ 10 │ 20 │ 30 │ 40 │ 50 │
 └────┴────┴────┴────┴────┘
-0    1    2    3    4
+   0    1    2    3    4
+```
 
-Cada posição possui um índice.
+Cada posição possui um **índice**.
 
-🎯 Por que usar vetores?
+---
+
+# 🎯 Por que usar vetores?
 
 Sem vetores:
 
+```java
 int n1 = 10;
 int n2 = 20;
 int n3 = 30;
 int n4 = 40;
 int n5 = 50;
+```
 
 Com vetor:
 
+```java
 int[] numeros = new int[5];
+```
 
-✅ Mais organizado
-✅ Mais profissional
+✅ Mais organizado  
+✅ Mais profissional  
 ✅ Mais fácil de repetir operações
 
-🧱 Estrutura básica
+---
+
+# 🧱 Estrutura básica
+
+```java
 tipo[] nome = new tipo[tamanho];
-Exemplo
+```
+
+## Exemplo
+
+```java
 int[] numeros = new int[5];
-Isso significa:
-Parte	Explicação
-int	Tipo dos dados
-numeros	Nome do vetor
-5	Quantidade de posições
-🧠 Como o vetor funciona na memória
+```
 
-Quando fazemos:
+---
 
+# 🧠 Como o vetor funciona na memória
+
+```java
 int[] numeros = new int[5];
-
-O Java cria:
-
-Índice →   0    1    2    3    4
-┌────┬────┬────┬────┬────┐
-Valor →   │ 0  │ 0  │ 0  │ 0  │ 0  │
-└────┴────┴────┴────┴────┘
-
-⚠️ Valores padrão do int começam em 0.
-
-🔢 Índices do vetor
-
-O vetor sempre começa no índice 0.
-
-Posição	Índice
-Primeira	0
-Segunda	1
-Terceira	2
-✍️ Adicionando valores
-numeros[0] = 10;
-numeros[1] = 20;
-numeros[2] = 30;
+```
 
 Resultado:
 
+```text
 Índice →   0    1    2    3    4
-┌────┬────┬────┬────┬────┐
+
+          ┌────┬────┬────┬────┬────┐
+Valor →   │ 0  │ 0  │ 0  │ 0  │ 0  │
+          └────┴────┴────┴────┴────┘
+```
+
+---
+
+# 🔢 Índices do vetor
+
+O vetor sempre começa no índice `0`.
+
+| Posição | Índice |
+|---|---|
+| Primeira | `0` |
+| Segunda | `1` |
+| Terceira | `2` |
+
+---
+
+# ✍️ Adicionando valores
+
+```java
+numeros[0] = 10;
+numeros[1] = 20;
+numeros[2] = 30;
+```
+
+Resultado:
+
+```text
+Índice →   0    1    2    3    4
+
+          ┌────┬────┬────┬────┬────┐
 Valor →   │10  │20  │30  │ 0  │ 0  │
-└────┴────┴────┴────┴────┘
-👀 Acessando valores
+          └────┴────┴────┴────┴────┘
+```
+
+---
+
+# 👀 Acessando valores
+
+```java
 System.out.println(numeros[0]);
+```
+
 Saída:
+
+```text
 10
-🔁 Percorrendo vetor com for
+```
 
-A maior vantagem dos vetores é usar repetição.
+---
 
+# 🔁 Percorrendo vetor com `for`
+
+```java
 for (int i = 0; i < numeros.length; i++) {
-System.out.println(numeros[i]);
+    System.out.println(numeros[i]);
 }
-🧩 Entendendo o for
-📍 Começo
-int i = 0;
+```
 
-Começa no índice 0.
+---
 
-📍 Condição
-i < numeros.length
+# ⭐ `.length`
 
-Repete enquanto i for menor que o tamanho do vetor.
-
-📍 Incremento
-i++
-
-Aumenta 1 a cada repetição.
-
-⭐ .length
+```java
 numeros.length
+```
 
 Retorna o tamanho do vetor.
 
-Exemplo
-int[] numeros = new int[5];
+---
 
-System.out.println(numeros.length);
-Saída
-5
+# 📥 Entrada de dados com vetor
 
-✅ Forma profissional
-✅ Evita erros
-✅ Código mais limpo
-
-📥 Entrada de dados com vetor
-
-Exemplo clássico:
-
+```java
 Scanner sc = new Scanner(System.in);
 
 int n = sc.nextInt();
@@ -126,61 +153,43 @@ int n = sc.nextInt();
 double[] vect = new double[n];
 
 for (int i = 0; i < n; i++) {
-vect[i] = sc.nextDouble();
+    vect[i] = sc.nextDouble();
 }
-🔍 O que está acontecendo?
-1️⃣ Lendo quantidade
-int n = sc.nextInt();
+```
 
-Usuário digita:
+---
 
-3
-2️⃣ Criando o vetor
-double[] vect = new double[n];
+# ⚠️ Erro muito comum
 
-Agora existem 3 posições.
+## `ArrayIndexOutOfBoundsException`
 
-3️⃣ Preenchendo o vetor
-for (int i = 0; i < n; i++) {
-vect[i] = sc.nextDouble();
-}
-
-Usuário digita:
-
-5.0
-7.0
-9.0
-
-Resultado:
-
-┌─────┬─────┬─────┐
-│ 5.0 │ 7.0 │ 9.0 │
-└─────┴─────┴─────┘
-⚠️ Erro muito comum
-ArrayIndexOutOfBoundsException
-
-Acontece quando tenta acessar uma posição inexistente.
-
-❌ Exemplo errado:
-
+```java
 int[] numeros = new int[3];
 
 numeros[3] = 10;
+```
 
 O vetor possui apenas:
 
+```text
 0, 1, 2
-🧱 Vetores de objetos
+```
 
-Também podemos armazenar objetos:
+---
 
+# 🧱 Vetores de objetos
+
+```java
 Product[] vect = new Product[n];
+```
 
-Cada posição guarda um objeto Product.
+Cada posição guarda um objeto `Product`.
 
-Muito usado em sistemas reais.
+---
 
-✅ Exemplo completo
+# ✅ Exemplo completo
+
+```java
 import java.util.Scanner;
 
 public class Main {
@@ -211,20 +220,30 @@ public class Main {
         sc.close();
     }
 }
-🧠 Mentalidade para entender vetores
+```
 
-Pense assim:
+---
 
+# 🧠 Mentalidade para entender vetores
+
+```text
 Vetor = várias posições na memória
+```
 
-E:
-
+```text
 i = posição atual
-📚 Resumo rápido
-Conceito	Significado
-Vetor	Estrutura que guarda vários valores
-Índice	Posição do elemento
-Primeiro índice	Sempre 0
-.length	Tamanho do vetor
-for	Percorre o vetor
-Mesmo tipo	Todos os elementos precisam ter o mesmo tipo
+```
+
+---
+
+# 📚 Resumo rápido
+
+| Conceito | Significado |
+|---|---|
+| Vetor | Estrutura que guarda vários valores |
+| Índice | Posição do elemento |
+| Primeiro índice | Sempre `0` |
+| `.length` | Tamanho do vetor |
+| `for` | Percorre o vetor |
+
+---
