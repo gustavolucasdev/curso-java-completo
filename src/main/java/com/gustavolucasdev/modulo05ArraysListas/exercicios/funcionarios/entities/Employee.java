@@ -1,10 +1,9 @@
 package com.gustavolucasdev.modulo05ArraysListas.exercicios.funcionarios.entities;
 
 public class Employee {
-    private Long id;
+    private long id;
     private String name;
     private Double salary;
-    private Double percentage;
 
     public Employee() {
     }
@@ -15,7 +14,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
@@ -33,17 +32,5 @@ public class Employee {
 
     public void setSalary(Double salary) {
         this.salary = salary;
-    }
-
-    public Double getPercentage() {
-        return percentage;
-    }
-
-    public void setPercentage(Double percentage) {
-        this.percentage = percentage;
-    }
-
-    public Double increaseSalary(Double salary, Double percentage) {
-        return (salary * percentage / 100) + salary;
     }
 }
